@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       id="hero"
       className="jarallax jarallax-img title-img"
-      style={{ backgroundImage: "url(images/hero-img.png)" }}
+      style={{ backgroundImage: "url(/hero-img.png)" }}
     >
       <div className="py-80 xl:px-96 text-center">
         <h2 className="font-heading text-5xl sm:text-6xl lg:text-8xl font-thin">

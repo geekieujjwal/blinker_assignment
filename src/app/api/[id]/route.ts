@@ -12,23 +12,23 @@ export const GET = async (
 
     const { id } = params;
     if (!ObjectId.isValid(id)) {
-      return NextResponse.json({ message: "Invalid post ID" }, { status: 400 });
+      return NextResponse.json({ message: "Invalid blog ID" }, { status: 400 });
     }
 
-    const post = await db
-      .collection("posts")
+    const blog = await db
+      .collection("blogs")
       .findOne({ _id: new ObjectId(id) });
 
-    if (!post) {
-      return NextResponse.json({ message: "Post not found" }, { status: 404 });
+    if (!blog) {
+      return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ message: "Success", post });
+    return NextResponse.json({ message: "Success", blog });
   } catch (error) {
-    console.error("Error fetching post:", error);
+    console.error("Error fetching blog:", error);
     if (error instanceof Error) {
       return NextResponse.json(
-        { message: "Failed to fetch post", error: error.message },
+        { message: "Failed to fetch blog", error: error.message },
         { status: 500 }
       );
     }
@@ -45,7 +45,7 @@ export const PATCH = async (
 
     const { id } = params;
     if (!ObjectId.isValid(id)) {
-      return NextResponse.json({ message: "Invalid post ID" }, { status: 400 });
+      return NextResponse.json({ message: "Invalid blog ID" }, { status: 400 });
     }
 
     const { title, content, author } = await req.json();
@@ -56,18 +56,18 @@ export const PATCH = async (
     if (author) updatedFields.author = author;
 
     const result = await db
-      .collection("posts")
+      .collection("blogs")
       .updateOne({ _id: new ObjectId(id) }, { $set: updatedFields });
 
     if (result.matchedCount === 0) {
-      return NextResponse.json({ message: "Post not found" }, { status: 404 });
+      return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ message: "Post updated successfully" });
+    return NextResponse.json({ message: "Blog updated successfully" });
   } catch (error) {
     if (error instanceof Error) {
       return NextResponse.json(
-        { message: "Failed to update post", error: error.message },
+        { message: "Failed to update blog", error: error.message },
         { status: 500 }
       );
     }
@@ -84,23 +84,23 @@ export const DELETE = async (
 
     const { id } = params;
     if (!ObjectId.isValid(id)) {
-      return NextResponse.json({ message: "Invalid post ID" }, { status: 400 });
+      return NextResponse.json({ message: "Invalid blog ID" }, { status: 400 });
     }
 
     const result = await db
-      .collection("posts")
+      .collection("blogs")
       .deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 0) {
-      return NextResponse.json({ message: "Post not found" }, { status: 404 });
+      return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ message: "Post deleted successfully" });
+    return NextResponse.json({ message: "Blog deleted successfully" });
   } catch (error) {
-    console.error("Error deleting post:", error);
+    console.error("Error deleting blog:", error);
     if (error instanceof Error) {
       return NextResponse.json(
-        { message: "Failed to delete post", error: error.message },
+        { message: "Failed to delete blog", error: error.message },
         { status: 500 }
       );
     }

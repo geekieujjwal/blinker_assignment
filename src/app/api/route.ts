@@ -1,25 +1,29 @@
 import clientPromise from "@/lib/mongodb";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
     const client = await clientPromise;
     const db = client.db("bloggingSite");
-    const posts = await db.collection("posts").find({}).toArray(); // Fetch all posts
+    const blogs = await db.collection("blogs").find({}).toArray(); // Fetch all blogs
     return NextResponse.json({
       message: "Success",
-      posts, // This is now a JSON-serializable array of documents
+      blogs, // This is now a JSON-serializable array of documents
     });
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error fetching blogs:", error);
     return NextResponse.json(
-      { message: "Failed to fetch posts" },
+      { message: "Failed to fetch blogs" },
       { status: 500 }
     );
   }
 };
 
-export const POST = async (req: Request) => {
+export const POST = async (req: NextRequest) => {
+  console.log("response:", req);
+  return NextResponse.json({
+    message: "Blog created successfully",
+  });
   try {
     const client = await clientPromise;
     const db = client.db("bloggingSite");
@@ -34,23 +38,23 @@ export const POST = async (req: Request) => {
       );
     }
 
-    const newPost = {
+    const newBlog = {
       title,
       content,
       author,
       createdAt: new Date(),
     };
 
-    const result = await db.collection("posts").insertOne(newPost);
+    const result = await db.collection("blogs").insertOne(newBlog);
 
     return NextResponse.json({
-      message: "Post created successfully",
-      postId: result.insertedId,
+      message: "Blog created successfully",
+      blogId: result.insertedId,
     });
   } catch (error) {
-    console.error("Error creating post:", error);
+    console.error("Error creating blog:", error);
     return NextResponse.json(
-      { message: "Failed to create post" },
+      { message: "Failed to create blog" },
       { status: 500 }
     );
   }
