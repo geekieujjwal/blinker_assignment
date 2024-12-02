@@ -1,8 +1,12 @@
 import BlogForm from "@/components/BlogForm";
-import React from "react";
+import React, { Suspense } from "react";
 
 const NewBlogPage = () => {
-  return <BlogForm />;
+  return (
+    <Suspense fallback={<div>loading....</div>}>
+      <BlogForm />
+    </Suspense>
+  );
 };
 
 export default NewBlogPage;

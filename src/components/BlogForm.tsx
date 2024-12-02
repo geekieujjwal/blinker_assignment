@@ -81,7 +81,7 @@ const BlogForm = () => {
     };
 
     fetchBlog();
-  }, [blogId, setValue]);
+  }, [blogId, router, setValue]);
 
   const onSubmit = async (data: BlogData) => {
     try {
