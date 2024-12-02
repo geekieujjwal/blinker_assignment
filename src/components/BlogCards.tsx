@@ -3,7 +3,7 @@ import React from "react";
 import BlogCard from "./BlogCard";
 
 const BlogCards = async () => {
-  const res = await fetch("http://localhost:3000/api/blogs", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogs`, {
     next: {
       tags: ["blogs"],
     },

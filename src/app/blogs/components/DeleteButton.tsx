@@ -8,9 +8,12 @@ const DeleteButton = ({ id, size = 30 }: { id?: string; size?: number }) => {
   const router = useRouter();
   const handleDelete = async () => {
     try {
-      const res = await fetch(`/api/blogs/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_URL}/api/blogs/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         router.refresh();
       }

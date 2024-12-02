@@ -7,7 +7,9 @@ import { FaRegEdit } from "react-icons/fa";
 import DeleteButton from "../components/DeleteButton";
 
 const BlogPage = async ({ params }: { params: { id: string } }) => {
-  const res = await fetch(`http://localhost:3000/api/blogs/${params.id}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_URL}/api/blogs/${params.id}`
+  );
   const { blog } = await res.json();
 
   return (

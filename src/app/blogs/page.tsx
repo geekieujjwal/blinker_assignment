@@ -14,7 +14,7 @@ const page = async ({
   const { query, page } = searchParams;
 
   const res = await fetch(
-    `http://localhost:3000/api/blogs?page=${page}&query=${query}`,
+    `${process.env.NEXT_PUBLIC_URL}/api/blogs?page=${page}&query=${query}`,
     {
       next: { tags: ["blogs"] }, // Add cache tag for revalidation
     }

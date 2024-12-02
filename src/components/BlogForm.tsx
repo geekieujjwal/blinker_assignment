@@ -55,7 +55,9 @@ const BlogForm = () => {
 
       try {
         setLoading(true);
-        const res = await fetch(`/api/blogs/${blogId}`);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_URL}/api/blogs/${blogId}`
+        );
 
         if (!res.ok) {
           throw new Error("Failed to fetch blog details");
@@ -89,7 +91,7 @@ const BlogForm = () => {
 
       const method = isEditMode ? "PATCH" : "POST"; // PATCH for editing, POST for creating
 
-      const res = await fetch(url, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${url}`, {
         method,
         headers: {
           "Content-Type": "application/json",
