@@ -1,14 +1,14 @@
-import clientPromise from "@/lib/mongodb";
+import connectToDatabase from "@/lib/mongoose";
+import Blog from "@/models/Blog";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
-    const client = await clientPromise;
-    const db = client.db("bloggingSite");
-    const blogs = await db.collection("blogs").find({}).toArray(); // Fetch all blogs
+    await connectToDatabase(); // Connect to the database
+    const blogs = await Blog.find(); // Fetch all blogs
     return NextResponse.json({
       message: "Success",
-      blogs, // This is now a JSON-serializable array of documents
+      blogs,
     });
   } catch (error) {
     console.error("Error fetching blogs:", error);
@@ -20,13 +20,8 @@ export const GET = async () => {
 };
 
 export const POST = async (req: NextRequest) => {
-  console.log("response:", req);
-  return NextResponse.json({
-    message: "Blog created successfully",
-  });
   try {
-    const client = await clientPromise;
-    const db = client.db("bloggingSite");
+    await connectToDatabase(); // Connect to the database
 
     const { title, content, author } = await req.json();
 
@@ -38,18 +33,12 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    const newBlog = {
-      title,
-      content,
-      author,
-      createdAt: new Date(),
-    };
-
-    const result = await db.collection("blogs").insertOne(newBlog);
+    const newBlog = new Blog({ title, content, author });
+    const savedBlog = await newBlog.save();
 
     return NextResponse.json({
       message: "Blog created successfully",
-      blogId: result.insertedId,
+      blog: savedBlog,
     });
   } catch (error) {
     console.error("Error creating blog:", error);

@@ -1,7 +1,8 @@
+import BlogForm from "@/components/BlogForm";
 import React from "react";
 
-const page = () => {
-  return <div>page</div>;
+const EditBlogPage = () => {
+  return <BlogForm />;
 };
 
-export default page;
+export default EditBlogPage;
