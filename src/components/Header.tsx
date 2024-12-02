@@ -9,14 +9,14 @@ const Header = () => {
         <div className="flex items-center justify-between ">
           <div className="flex items-center justify-between">
             <div className="flex-shrink-0 w-[70px] border-2">
-              <a href="index.html">
+              <Link href="/">
                 <Image
                   src="/image.png"
                   width={500}
                   height={500}
                   alt="Picture of the author"
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden md:block">

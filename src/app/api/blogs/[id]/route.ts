@@ -1,6 +1,7 @@
 import connectToDatabase from "@/lib/mongoose";
 import Blog from "@/models/Blog";
 import { ObjectId } from "mongodb";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (
@@ -54,6 +55,9 @@ export const PATCH = async (
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
 
+    // revalidateTag("blogs");
+    revalidatePath("/blogs");
+
     return NextResponse.json({
       message: "Blog updated successfully",
       updatedBlog,
@@ -85,6 +89,8 @@ export const DELETE = async (
     if (!result) {
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
+    // revalidateTag("blogs");
+    revalidatePath("/blogs");
 
     return NextResponse.json({ message: "Blog deleted successfully" });
   } catch (error) {

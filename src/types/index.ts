@@ -1,7 +1,7 @@
 export interface Blog {
-  _id: string;
+  _id?: string;
   title: string;
   content: string;
   author: string;
-  createdAt: Date;
+  createdAt?: Date;
 }

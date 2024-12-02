@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Featured = () => {
@@ -16,9 +17,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500 ">
-                  <a href="blog-single.html" className="blog-link capitalize">
-                    How 'Weak Ties' Can Strengthen Our Relationships
-                  </a>
+                  <Link href="/blogs" className="blog-link capitalize">
+                    How &apos;Weak Ties&apos; Can Strengthen Our Relationships
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4" />
@@ -29,9 +30,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
-                    How 'Weak Ties' Can Strengthen Our Relationships
-                  </a>
+                  <Link href="/blogs" className="blog-link capitalize">
+                    How &apos;Weak Ties&apos; Can Strengthen Our Relationships
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4 " />
@@ -42,9 +43,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
-                    What It's Really Like to Date While Anxious{" "}
-                  </a>
+                  <Link href="/blogs" className="blog-link capitalize">
+                    What It&apos;s Really Like to Date While Anxious{" "}
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4" />
@@ -55,9 +56,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
-                    What It's Really Like to Date While Anxious{" "}
-                  </a>
+                  <Link href="/blogs" className="blog-link capitalize">
+                    What It&apos;s Really Like to Date While Anxious{" "}
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4 " />
@@ -68,9 +69,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
+                  <Link href="/blogs" className="blog-link capitalize">
                     Benefits to Having Much Older Friends than you
-                  </a>
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4" />
@@ -81,9 +82,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
+                  <Link href="/blogs" className="blog-link capitalize">
                     Benefits to Having Much Older Friends than you
-                  </a>
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4 " />
@@ -94,9 +95,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
+                  <Link href="/blogs" className="blog-link capitalize">
                     How Often You Should Wash Your Hair in winter
-                  </a>
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4 " />
@@ -107,9 +108,9 @@ const Featured = () => {
                   dating and Relationships
                 </span>
                 <h3 className="font-heading text-2xl font-normal hover:text-gray-500">
-                  <a href="blog-single.html" className="blog-link capitalize">
+                  <Link href="/blogs" className="blog-link capitalize">
                     How Often You Should Wash Your Hair in winter
-                  </a>
+                  </Link>
                 </h3>
               </div>
               <hr className="my-4 " />

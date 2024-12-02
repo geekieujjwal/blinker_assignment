@@ -1,13 +1,32 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import {
+  CiFacebook,
+  CiInstagram,
+  CiLinkedin,
+  CiTwitter,
+  CiYoutube,
+} from "react-icons/ci";
 
 const Footer = () => {
   return (
     <section id="footer" className="relative">
       <div className="pattern-overlay pattern-left absolute -z-10">
-        {/* <img src="images/leaf-img-pattern-left.png" alt="pattern" /> */}
+        <Image
+          src="/leaf-img-pattern-left.png"
+          alt="image"
+          width={300}
+          height={300}
+        />
       </div>
       <div className="pattern-overlay pattern-right absolute bottom-0 right-0 -z-10">
-        {/* <img src="images/leaf-img-pattern-right.png" alt="pattern" /> */}
+        <Image
+          src="/leaf-img-pattern-right.png"
+          alt="image"
+          width={300}
+          height={300}
+        />
       </div>
 
       <div className="container mx-auto footer-container py-40 px-5 lg:px-0">
@@ -15,29 +34,29 @@ const Footer = () => {
           <div className="">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Twitter
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Facebook
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Instagram
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Linkedin
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Youtube
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,29 +64,29 @@ const Footer = () => {
           <div className="">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Policy
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Terms
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,29 +94,29 @@ const Footer = () => {
           <div className="">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Spirituality
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Life
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Relationships
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Travel
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Health
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -105,29 +124,29 @@ const Footer = () => {
           <div className="">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Yoga
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Gardening
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Love
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Books
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="uppercase hover:text-gray-500">
+                <Link href="#" className="uppercase hover:text-gray-500">
                   Meditation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -136,17 +155,48 @@ const Footer = () => {
             <div className="col-span-2 lg:text-right">
               <p className="m-0">
                 {" "}
-                <b>info@yourcompany.com</b>{" "}
+                <b>info@blinkertechnology.com</b>{" "}
               </p>
-              <p className="m-0">15Th Street Avenue, New York, USA</p>
+              <p className="m-0">Headquarters</p>
+              <p>Central, HK</p>
               <p className="m-0">011-554-8798-6556</p>
 
-              <div className=" mt-3 d-flex justify-content-md-end">
-                <a
+              <div className=" mt-3 flex justify-end">
+                <Link
                   href="#"
                   className="social-link text-xl hover:text-gray-500 me-4"
                   target="_blank"
-                ></a>
+                >
+                  <CiFacebook />
+                </Link>
+                <Link
+                  href="#"
+                  className="social-link text-xl hover:text-gray-500 me-4"
+                  target="_blank"
+                >
+                  <CiInstagram />
+                </Link>
+                <Link
+                  href="#"
+                  className="social-link text-xl hover:text-gray-500 me-4"
+                  target="_blank"
+                >
+                  <CiTwitter />
+                </Link>
+                <Link
+                  href="#"
+                  className="social-link text-xl hover:text-gray-500 me-4"
+                  target="_blank"
+                >
+                  <CiLinkedin />
+                </Link>
+                <Link
+                  href="#"
+                  className="social-link text-xl hover:text-gray-500 me-4"
+                  target="_blank"
+                >
+                  <CiYoutube />
+                </Link>
               </div>
             </div>
           </div>
@@ -154,20 +204,8 @@ const Footer = () => {
 
         <footer className="border-t ">
           <div className="flex justify-center pt-10">
-            <p className="mb-0">© 2023 TemplatesJungle. All rights reserved.</p>
-          </div>
-          <div className="flex justify-center">
-            <p className="">
-              Free HTML Template By:
-              <a
-                href="https://templatesjungle.com/"
-                className="website-link"
-                target="_blank"
-              >
-                <b>
-                  <u>TemplatesJungle</u>
-                </b>
-              </a>
+            <p className="mb-0">
+              © 2024 Blinker Technologies. All rights reserved.
             </p>
           </div>
         </footer>
