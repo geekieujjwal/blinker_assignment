@@ -9,7 +9,7 @@ export const GET = async (
   { params }: { params: { id: string } }
 ) => {
   try {
-    await connectToDatabase(); // Connect to the database
+    await connectToDatabase();
 
     const { id } = params;
 
@@ -37,7 +37,7 @@ export const PATCH = async (
   { params }: { params: { id: string } }
 ) => {
   try {
-    await connectToDatabase(); // Connect to the database
+    await connectToDatabase();
 
     const { id } = params;
 
@@ -55,7 +55,6 @@ export const PATCH = async (
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
 
-    // revalidateTag("blogs");
     revalidatePath("/blogs");
 
     return NextResponse.json({
@@ -76,7 +75,7 @@ export const DELETE = async (
   { params }: { params: { id: string } }
 ) => {
   try {
-    await connectToDatabase(); // Connect to the database
+    await connectToDatabase();
 
     const { id } = params;
 
@@ -89,7 +88,7 @@ export const DELETE = async (
     if (!result) {
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });
     }
-    // revalidateTag("blogs");
+
     revalidatePath("/blogs");
 
     return NextResponse.json({ message: "Blog deleted successfully" });

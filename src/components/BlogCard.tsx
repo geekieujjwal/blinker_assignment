@@ -1,14 +1,21 @@
-import DeleteButton from "@/app/blogs/components/DeleteButton";
+import React from "react";
+
+// Type Imports
 import { Blog } from "@/types";
-import { formatDate } from "@/utils/formatDate";
+
+// Next Imports
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+// Icon Imports
 import { FaRegEdit } from "react-icons/fa";
 
-// Helper function to strip HTML tags
+// Custom Component Imports
+import DeleteButton from "@/app/blogs/components/DeleteButton";
+import { formatDate } from "@/utils/formatDate";
+
 const stripHtmlTags = (html: string): string => {
-  return html.replace(/<[^>]+>/g, ""); // Remove all HTML tags
+  return html.replace(/<[^>]+>/g, "");
 };
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
@@ -50,12 +57,14 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
             : stripHtmlTags(content)}
         </p>
         <div className="flex items-center justify-between">
-          <Link
-            href={_id ? `/blogs/${_id}` : "#"}
-            className="font-heading text-sm font-normal py-2 px-4 bg-transparent hover:bg-black text-black hover:text-white border-black border-2 hover:border-transparent rounded-full transition duration-700 ease-in-out"
-          >
-            Read More
-          </Link>
+          {_id && (
+            <Link
+              href={_id ? `/blogs/${_id}` : "#"}
+              className="font-heading text-sm font-normal py-2 px-4 bg-transparent hover:bg-black text-black hover:text-white border-black border-2 hover:border-transparent rounded-full transition duration-700 ease-in-out"
+            >
+              Read More
+            </Link>
+          )}
           {_id ? (
             <div className="flex gap-5">
               <div className="relative group">

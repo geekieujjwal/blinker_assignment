@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
+
+// Next Imports
 import { useSearchParams, useRouter } from "next/navigation";
+
+// Icon Imports
 import { FaSearch } from "react-icons/fa";
 
 const SearchComponent = () => {
@@ -13,9 +17,9 @@ const SearchComponent = () => {
     setQuery(e.target.value);
     const params = new URLSearchParams(searchParams.toString());
     if (newQuery !== "") {
-      params.set("query", newQuery); // Add or update the query parameter
+      params.set("query", newQuery);
     } else {
-      params.delete("query"); // Remove the query parameter if empty
+      params.delete("query");
     }
 
     router.push(`?${params.toString()}`);

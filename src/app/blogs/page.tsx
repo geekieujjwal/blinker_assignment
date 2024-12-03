@@ -1,6 +1,12 @@
-import { Blog } from "@/types";
 import React from "react";
+
+// Type Imports
+import { Blog } from "@/types";
+
+// Next Imports
 import { unstable_noStore } from "next/cache";
+
+// Custom Component Imports
 import SearchComponent from "./components/SearchComponent";
 import Pagination from "./components/Pagination";
 import BlogCard from "@/components/BlogCard";
