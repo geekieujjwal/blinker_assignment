@@ -1,5 +1,9 @@
-import { Blog } from "@/types";
 import React from "react";
+
+// Type Imports
+import { Blog } from "@/types";
+
+// Custom Component Imports
 import BlogCard from "./BlogCard";
 
 const BlogCards = async () => {

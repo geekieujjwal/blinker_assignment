@@ -1,14 +1,18 @@
+import React from "react";
+
+// Custom Component Imports
 import BlogBlock from "@/components/BlogBlock";
-import BlogCard from "@/components/BlogCards";
+import BlogCards from "@/components/BlogCards";
 import Featured from "@/components/Featured";
 import Hero from "@/components/Hero";
-import React from "react";
+
+export const runtime = "nodejs";
 
 const page = () => {
   return (
     <>
       <Hero />
-      <BlogCard />
+      <BlogCards />
       <Featured />
       <BlogBlock />
     </>

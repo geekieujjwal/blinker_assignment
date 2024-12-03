@@ -1,6 +1,10 @@
+import React from "react";
+
+// Next Imports
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+// Icon Imports
 import {
   CiFacebook,
   CiInstagram,

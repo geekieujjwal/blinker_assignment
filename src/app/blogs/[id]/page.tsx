@@ -1,9 +1,15 @@
-import BlogCard from "@/components/BlogCards";
-import { formatDate } from "@/utils/formatDate";
+import React from "react";
+
+// Next Imports
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+// Icon Imports
 import { FaRegEdit } from "react-icons/fa";
+
+// Custom Component Imports
+import BlogCards from "@/components/BlogCards";
+import { formatDate } from "@/utils/formatDate";
 import DeleteButton from "../components/DeleteButton";
 
 const BlogPage = async ({ params }: { params: { id: string } }) => {
@@ -15,7 +21,6 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="container mx-auto px-4 py-10">
       <article className="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
-        {/* Header Section */}
         <header className="bg-gray-800 text-white py-6 px-8">
           <h1 className="text-4xl font-bold">{blog.title}</h1>
           <div className="flex items-center justify-between mt-4">
@@ -43,7 +48,6 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
           </div>
         </header>
 
-        {/* Image Section */}
         <div className="relative h-72 md:h-96">
           <Image
             src="/blog11.png"
@@ -53,7 +57,6 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
           />
         </div>
 
-        {/* Content Section */}
         <div className="p-8 prose max-w-none bg-orange-50">
           <div
             dangerouslySetInnerHTML={{ __html: blog.content }}
@@ -62,10 +65,9 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
         </div>
       </article>
 
-      {/* Related Section */}
       <aside className="mt-32">
         <h2 className="text-2xl font-semibold mb-[-100px]">Related Blogs</h2>
-        <BlogCard />
+        <BlogCards />
       </aside>
     </div>
   );

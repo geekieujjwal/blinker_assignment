@@ -1,5 +1,7 @@
-import Link from "next/link";
 import React from "react";
+
+// Next Imports
+import Link from "next/link";
 
 const Featured = () => {
   return (

@@ -3,18 +3,19 @@
 // ** React Imports
 import { useEffect, useState } from "react";
 
+// Toastify Imports
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // ** Third Party Imports
 import { Controller, useForm } from "react-hook-form";
+import { Editor } from "@tinymce/tinymce-react";
 
 // ** Next Imports
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-// ** Type Imports
-import { Editor } from "@tinymce/tinymce-react";
+// ** Custom Component Imports
 import BlogCard from "./BlogCard";
 
 interface BlogData {
@@ -47,8 +48,6 @@ const BlogForm = () => {
 
   const formValues = watch();
 
-  console.log(formValues);
-
   useEffect(() => {
     const fetchBlog = async () => {
       if (!blogId) return;
@@ -66,7 +65,6 @@ const BlogForm = () => {
         const data = await res.json();
         const { blog } = data;
 
-        // Set the fetched blog data to the form fields
         setValue("title", blog.title);
         setValue("author", blog.author);
         setValue("content", blog.content);
@@ -83,11 +81,8 @@ const BlogForm = () => {
 
   const onSubmit = async (data: BlogData) => {
     try {
-      const url = isEditMode
-        ? `/api/blogs/${blogId}` // Use the blog ID for editing
-        : "/api/blogs"; // Endpoint for creating a new blog
-
-      const method = isEditMode ? "PATCH" : "POST"; // PATCH for editing, POST for creating
+      const url = isEditMode ? `api/blogs/${blogId}` : "api/blogs";
+      const method = isEditMode ? "PATCH" : "POST";
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/${url}`, {
         method,
@@ -105,7 +100,7 @@ const BlogForm = () => {
             : "Blog created successfully!",
           { position: "top-right" }
         );
-        setTimeout(() => router.push("/blogs"), 2000); // Redirect after success
+        setTimeout(() => router.push("/blogs"), 1000);
       } else {
         const errorData = await res.json();
         toast.error(errorData.message || "Failed to save blog", {

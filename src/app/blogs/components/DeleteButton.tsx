@@ -1,8 +1,15 @@
 "use client";
+
 import React from "react";
+
+// Icon Imports
 import { MdDeleteOutline } from "react-icons/md";
-import { toast } from "react-toastify";
+
+// Next Imports
 import { useRouter } from "next/navigation";
+
+// Toast Imports
+import { toast } from "react-toastify";
 
 const DeleteButton = ({ id, size = 30 }: { id?: string; size?: number }) => {
   const router = useRouter();
