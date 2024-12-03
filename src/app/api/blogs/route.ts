@@ -23,8 +23,6 @@ export const GET = async (req: NextRequest) => {
           }
         : {};
 
-    console.log("---->>>>>", filter);
-
     // Count total blogs matching the filter
     const totalBlogs = await Blog.countDocuments(filter);
 

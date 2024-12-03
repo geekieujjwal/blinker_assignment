@@ -16,11 +16,10 @@ const page = async ({
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/blogs?page=${page}&query=${query}`,
     {
-      next: { tags: ["blogs"] }, // Add cache tag for revalidation
+      next: { tags: ["blogs"] },
     }
   );
-  const { blogs, totalBlogs, currentPage, totalPages } = await res.json();
-  console.log("blogs:", totalBlogs);
+  const { blogs, currentPage, totalPages } = await res.json();
 
   return (
     <div className="container mx-auto mt-8">
