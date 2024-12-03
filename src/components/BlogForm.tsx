@@ -123,7 +123,7 @@ const BlogForm = () => {
         <p>Loading blog details...</p>
       ) : (
         <div className=" w-full flex justify-around gap-6 flex-col-reverse items-center md:flex-row">
-          <div className="min-w-[400px] grow">
+          <div className="w-[90vw] md:min-w-[400px] grow">
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* Title */}
               <div className="mb-4">
